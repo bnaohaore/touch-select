@@ -1,9 +1,9 @@
 # touch-select
 html<br>
-···html
+html
       <input id="select_touch_start" disabled="disabled">
       <div id="touch_select_box"></div>
-
+  end
 <br>
 
 js<br>
@@ -70,7 +70,7 @@ javascript
         console.log(this.getAttribute('data-name'));
       }
     });
-     javascript
+     end
      
 
 
@@ -123,7 +123,7 @@ javascript
       }
       }
     });
-     javascript
+     end
      
 
 
