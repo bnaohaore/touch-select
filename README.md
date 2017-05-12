@@ -8,7 +8,7 @@ ruby
 
 js<br>
 省市区示例
-ruby
+```javascript
      import touch_select from 'touch-select';
      
     var ct=touch_select.city_data.data; //这是插件内置的省市区数据 data.js 修改 或者自行调用接口获取
@@ -70,14 +70,14 @@ ruby
         console.log(this.getAttribute('data-name'));
       }
     });
-     end
+     ```
      
 
 
 <br><br><br>
 时间示例
 js<br>
-ruby
+```javascript
    import touch_select from 'touch-select';
      
     var ct=touch_select.city_data.data;
@@ -123,7 +123,7 @@ ruby
       }
       }
     });
-     end
+     ```
      
 
 
