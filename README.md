@@ -70,13 +70,14 @@ js<br>
         console.log(this.getAttribute('data-name'));
       }
     });
-     ```
+```
      
 
 
 <br><br><br>
 时间示例
-js<br>
+js
+<br>
 ```javascript
    import touch_select from 'touch-select';
      
@@ -123,7 +124,7 @@ js<br>
       }
       }
     });
-     ```
+```
      
 
 
