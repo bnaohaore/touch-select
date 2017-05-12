@@ -52,6 +52,7 @@ touch_select.__proto__=touch_select.prototype={
 
       touch_select('#touch-select')[0].addEventListener('touchstart',stat,false);
       function stat(event) {
+        event.preventDefault();
         if(event.target.parentNode.className.indexOf('touch-select-ul') !=-1){
           event.target.parentNode.className='touch-select-ul';
           tha.doms_height=event.target.parentNode.childNodes.length*event.target.offsetHeight;
@@ -62,6 +63,7 @@ touch_select.__proto__=touch_select.prototype={
       };
       touch_select('#touch-select')[0].addEventListener('touchmove',moves,false);
       function moves(event) {
+        event.preventDefault();
         if(event.target.parentNode.className.indexOf('touch-select-ul')!=-1){
           var touch_one = event.touches[0];
           this.touch_dom=event.target.parentNode;
@@ -69,6 +71,7 @@ touch_select.__proto__=touch_select.prototype={
         }
       };
       touch_select('#touch-select')[0].addEventListener('touchend',function (event) {
+        event.preventDefault();
         tha.ends(event)
       },false);
     }
