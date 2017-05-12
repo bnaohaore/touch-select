@@ -70,7 +70,7 @@ js<br>
         console.log(this.getAttribute('data-name'))
       }
     });
-     
+     ···javascript
      
 
 
@@ -123,7 +123,7 @@ js<br>
       }
       }
     });
-     
+     ···javascript
      
 
 
