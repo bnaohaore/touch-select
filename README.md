@@ -8,9 +8,9 @@ html<br>
 
 js<br>
 省市区示例
-···javascript
-     import touch_select from 'touch-select'
-     
+javascript
+     import touch_select from 'touch-select';
+     
     var ct=touch_select.city_data.data; //这是插件内置的省市区数据 data.js 修改 或者自行调用接口获取
     touch_select.set_init({
       render:function (){
@@ -67,18 +67,18 @@ js<br>
 
         //打印选择的value
         console.log(this.getAttribute('data-value'));
-        console.log(this.getAttribute('data-name'))
+        console.log(this.getAttribute('data-name'));
       }
     });
-     ···javascript
+     javascript
      
 
 
 <br><br><br>
 时间示例
 js<br>
-···javascript
-   import touch_select from 'touch-select'
+javascript
+   import touch_select from 'touch-select';
      
     var ct=touch_select.city_data.data;
     touch_select.set_init({
@@ -123,7 +123,7 @@ js<br>
       }
       }
     });
-     ···javascript
+     javascript
      
 
 
