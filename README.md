@@ -1,9 +1,9 @@
 # touch-select
 html<br>
-ruby
+```html
       <input id="select_touch_start" disabled="disabled">
       <div id="touch_select_box"></div>
-  end
+  ```
 <br>
 
 js<br>
