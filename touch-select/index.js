@@ -10,6 +10,8 @@ function touch_select(xx) {
 touch_select.__proto__=touch_select.prototype={
   init:function (xx) {
 
+      var tha =this;
+
     var moresdom=  document.querySelectorAll(xx);
     for(var ids in moresdom){
       this[ids]=moresdom[ids]
@@ -56,9 +58,10 @@ touch_select.__proto__=touch_select.prototype={
         if(event.target.parentNode.className.indexOf('touch-select-ul') !=-1){
           event.target.parentNode.className='touch-select-ul';
           tha.doms_height=event.target.parentNode.childNodes.length*event.target.offsetHeight;
-          tha.dom_now_num=event.target.parentNode.style.webkitTransform.replace(/[translateY,px,()]/g,'');
-
+          tha.dom_now_num=event.target.parentNode.style.webkitTransform.replace(/translate3d|px|\(|\)/g,'').split(',')[1]  || event.target.parentNode.style.transform.replace(/translate3d|px|\(|\)/g,'').split(',')[1] || 0
           tha.starty=event.touches[0].clientY;
+
+
         }
       };
       touch_select('#touch-select')[0].addEventListener('touchmove',moves,false);
@@ -78,14 +81,17 @@ touch_select.__proto__=touch_select.prototype={
   },
   set_transfrom:function (doms,touch_one){
     var tha=this;
-    tha.dom_go_num=-((tha.starty-touch_one.clientY)-tha.dom_now_num );
-    doms.setAttribute('style','transform:translateY('+tha.dom_go_num+'px)')
+
+    tha.dom_go_num=-((tha.starty-touch_one.clientY)-tha.dom_now_num);
+
+
+    doms.setAttribute('style','transform:translate3d(0,'+tha.dom_go_num+'px,0)')
   },
 
   ends:function(event) {
     var tha=this;
     if(event.target.parentNode.className.indexOf('touch-select-ul')!=-1){
-      event.target.parentNode.className=event.target.parentNode.className+' trans1';
+
       tha.this_select_num=(-(tha.dom_go_num-(tha.li_height*2)))/tha.li_height;
       tha.set_num=(-Math.round(tha.this_select_num)*tha.li_height)+(tha.li_height*2);
       if(tha.set_num>tha.li_height*2){
@@ -94,7 +100,8 @@ touch_select.__proto__=touch_select.prototype={
       if(tha.set_num<-(tha.doms_height-tha.li_height*3)){
         tha.set_num=-(tha.doms_height-tha.li_height*3)
       }
-      event.target.parentNode.setAttribute('style','transform:translateY('+tha.set_num+'px)');
+
+      event.target.parentNode.setAttribute('style','transform:translate3d(0,'+tha.set_num+'px,0);transition:0.5s');
 
       tha.index_li=-(tha.set_num-(tha.li_height*2))/tha.li_height;
 
